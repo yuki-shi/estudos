@@ -21,8 +21,13 @@ int main(int argc, char*argv[])
 int binarySearch(int array[], int max, int min, int input)
 {
     int mid = min + (max - min) / 2;
-
-    if(input == array[mid])
+    
+    if(min > max)
+    {
+        printf("Erro!\n");
+        exit(1);
+    }
+    else if(input == array[mid])
     {
         return mid;
     }

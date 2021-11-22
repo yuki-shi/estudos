@@ -3,13 +3,19 @@
 
 int binarySearch(int array[], int max, int min, int input);
 
-int main()
+const PRIMES[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
+
+int main(int argc, char*argv[])
 {
-    int primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
-    int lenght = sizeof(primes)/(sizeof(primes[0]));
-    int n = 43;
-    int index = binarySearch(primes, lenght, 0, n);
-    printf("%i\n", index);
+    if(argc != 2)
+    {
+        printf("Uso: ./binarySearch elemento desejado\n");
+        return 1;
+    }
+    int lenght = sizeof(PRIMES)/(sizeof(PRIMES[0]));
+    int index = binarySearch(PRIMES, lenght, 0, atoi(argv[1]));
+    printf("Index: %i\n", index);
+    return 0;
 }
 
 int binarySearch(int array[], int max, int min, int input)

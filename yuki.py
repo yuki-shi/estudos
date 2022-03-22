@@ -47,7 +47,9 @@ df[df['Name'].str.contains(pat='chu')] # é possível utilizar métodos de str c
 
 ### SORTING / DESCRIBING ###
 
-df.describe() # retorna informações gerais
+df.describe() # retorna informações gerais dos dados numericos
+
+df.describe(include=['object'])
 
 df.sort_values('Name', ascending=False) # nome, ordem decrescente
 

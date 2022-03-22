@@ -102,3 +102,4 @@ df.groupby('Type 1')['Attack'].agg(['mean', 'min', 'max'])
 
 df.groupby('Type 1').apply(lambda x: x.str.contains('Ghost').sum())
 df.applymap(lambda x: x.capitalize() if isinstance (x, int) else x) # aplica para todo o df
+df[['Speed', 'Attack']].corr() # checa coeficiente de relacionamento entre duas variaveis numericas
